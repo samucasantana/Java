@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fila;
+package app;
 
 import java.util.Arrays;
 
@@ -11,27 +11,27 @@ import java.util.Arrays;
  *
  * @author samuel.silva
  */
-public class Fila {
-    int[] fila = new int[6]; 
+public class Pilha {
+    int[] pilha = new int[6]; 
     int index = 0;
     
     
     public void Add(){
-        for(int i = 0; i < fila.length; i++){
-            fila[i] = i;
+        for(int i = 0; i < pilha.length; i++){
+            pilha[i] = i;
         }
     }
     
     // function necessaria para remover um elemento do array
     // vai dar erro se o array for vazio
-     public static int[] removeElement(int[] fila,int element){
-         int[] arr = new int[fila.length-1];
-         for(int i = 0, k = 0; i < fila.length; i++){
+     public static int[] removeElement(int[] pilha,int element){
+         int[] arr = new int[pilha.length-1];
+         for(int i = 0, k = 0; i < pilha.length; i++){
              // se existir um index ele continua e revome o index
              if(i == element){
                  continue;
              }
-             arr[k++] = fila[i];
+             arr[k++] = pilha[i];
          }
          return arr;
    }
@@ -40,15 +40,17 @@ public class Fila {
         return arr = removeElement(arr, element);
     } 
     public boolean Empty(){
-        if(fila == null){
+        // verificando se a pilha está cheia ou vazia
+        if(pilha == null){
+            // se estiver vazia retorna true
             return true;
         }
         return false;
     }
     public int[] Show(){
         // encapsulando com toString para retorna a String do array
-        System.out.println(Arrays.toString(fila));
-        return fila;
+        System.out.println(Arrays.toString(pilha));
+        return pilha;
     }
     /**
      * @param args the command line arguments
@@ -56,11 +58,11 @@ public class Fila {
     public static void main(String[] args) {
         // pegando o array
         int[] arr = { 1, 2, 3, 4, 5 }; 
-        Fila filll = new Fila();
-        filll.Add();
-        filll.Empty();
-        filll.Remove(arr, 0);
-        filll.Show();
+        Pilha Stack = new Pilha();
+        Stack.Add();
+        Stack.Empty();
+        Stack.Remove(arr, 0);
+        Stack.Show();
     }
     
 }
