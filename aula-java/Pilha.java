@@ -58,6 +58,7 @@ public class Pilha {
     public static void main(String[] args) {
         // pegando o array
         int[] arr = { 1, 2, 3, 4, 5 }; 
+        // estanciando a classe para tornar ela usavel 
         Pilha Stack = new Pilha();
         Stack.Add();
         Stack.Empty();
