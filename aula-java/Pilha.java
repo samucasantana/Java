@@ -13,9 +13,9 @@ import java.util.Arrays;
  */
 public class Pilha {
     int[] pilha = new int[6]; 
-    int index = 0;
+
     
-    
+    // adicionando valores para o array não iniciar vazio 
     public void Add(){
         for(int i = 0; i < pilha.length; i++){
             pilha[i] = i;
@@ -36,9 +36,6 @@ public class Pilha {
          return arr;
    }
      
-    public int[] Remove(int[] arr, int element){
-        return arr = removeElement(arr, element);
-    } 
     public boolean Empty(){
         // verificando se a pilha está cheia ou vazia
         if(pilha == null){
@@ -47,23 +44,29 @@ public class Pilha {
         }
         return false;
     }
-    public int[] Show(){
-        // encapsulando com toString para retorna a String do array
-        System.out.println(Arrays.toString(pilha));
-        return pilha;
+    public int[] remove(int[] arr, int element){
+        arr = removeElement(pilha, element);
+        return arr;
     }
+   
     /**
      * @param args the command line arguments
      */
+    /*
+    * Lembrando que na pilha o primeiro elemento que entra e o último que sai 
+    *  int[] arr = {0,1,2,3,4,5};
+    * 0 = primeiro elemento e 5 = último elemento 
+    */
     public static void main(String[] args) {
-        // pegando o array
-        int[] arr = { 1, 2, 3, 4, 5 }; 
-        // estanciando a classe para tornar ela usavel 
+        // declarando qual vai ser o valor excluido
+        int element= 5;
+        int[] arr = {0,1,2,3,4,5};
+        // instânciando a classe para chamar os métodos 
         Pilha Stack = new Pilha();
         Stack.Add();
         Stack.Empty();
-        Stack.Remove(arr, 0);
-        Stack.Show();
+        System.out.println(Arrays.toString(Stack.remove(arr, element)));
+        
     }
     
 }
